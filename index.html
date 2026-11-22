@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- 위프용 광역수사팀 사건전산망 (창작용). 관리자 편집: 아래 const cases=[...] 내용을 수정하세요. 방문자에게 편집·저장 기능을 제공하지 않습니다. -->
 <html lang="ko">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101725">
@@ -9,30 +8,680 @@
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -20%,#1c3454 0%,transparent 48%),var(--bg);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--text);line-height:1.5}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.layout{min-height:100vh;display:flex}.sidebar{width:236px;flex:none;background:#0c1420;border-right:1px solid var(--stroke);padding:26px 18px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;padding:4px 8px 28px;border-bottom:1px solid var(--stroke)}.logo{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(140deg,#2a71ab,#142c4d);border:1px solid #4187c3;font-weight:900;letter-spacing:-1px}.brand b{font-size:15px;display:block}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.1px}.navgroup{padding-top:22px}.navgroup label{font-size:10px;color:#6f829b;margin:10px 13px 9px;display:block;letter-spacing:1.5px}.nav{width:100%;text-align:left;background:none;border:1px solid transparent;color:#9aabc0;border-radius:11px;padding:12px 13px;display:flex;align-items:center;gap:12px;margin-bottom:6px}.nav.active{background:#172a40;color:var(--accent2);border-color:#274668}.nav .ic{width:20px;text-align:center;font-size:16px}.sidebar-footer{margin-top:auto;color:#6a7d96;font-size:11px;padding:12px;line-height:1.8}.main{width:100%;min-width:0;max-width:1450px;margin:0 auto;padding:28px 32px 60px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:30px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-weight:700;font-size:10px}.heading{font-size:26px;font-weight:800;margin:6px 0 4px;letter-spacing:-.8px}.sub{color:var(--muted);font-size:13px}.user{display:flex;align-items:center;gap:11px;border:1px solid var(--stroke);border-radius:13px;background:#142031;padding:9px 14px;color:#b8c7d9;font-size:12px;white-space:nowrap}.avatar{background:#2b4869;color:#c9eaff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:800}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.stat,.panel{background:linear-gradient(145deg,rgba(25,38,56,.95),rgba(15,24,38,.98));border:1px solid var(--stroke);border-radius:15px;box-shadow:var(--shadow)}.stat{padding:17px 20px}.stat .small{color:var(--muted);font-size:12px}.stat .number{font-size:29px;font-weight:800;line-height:1.2;margin:8px 0 2px}.stat .hint{font-size:11px;color:#83a4c7}.panel{overflow:hidden}.toolbar{padding:20px;display:flex;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--stroke)}.search{background:#0d1726;border:1px solid #314158;color:var(--text);border-radius:10px;padding:12px 13px;min-width:230px;flex:1}.search::placeholder{color:#687b94}.filters{display:flex;gap:7px;flex-wrap:wrap}.chip{border-radius:10px;border:1px solid #32425a;background:#162438;color:#acc0d9;padding:10px 12px;font-size:12px}.chip.sel{background:#24507b;color:#e1f3ff;border-color:#4489c5}.list-head{padding:16px 20px;display:flex;justify-content:space-between;gap:8px;color:#abc0da;font-size:12px}.rows{padding:0 10px}.case{display:grid;grid-template-columns:124px minmax(0,1fr) 90px 78px 22px;align-items:center;gap:14px;width:100%;border:1px solid transparent;border-top-color:var(--stroke);text-align:left;background:transparent;padding:19px 12px;color:var(--text)}.case:hover{background:#182840;border-color:#314969;border-radius:9px}.case-code{font-size:12px;color:#9fcaff;font-weight:700}.case-code small{display:block;font-size:10px;color:#8195ad;font-weight:400;margin-top:5px}.case-name{font-size:14px;font-weight:700}.case-meta{display:block;margin-top:5px;font-size:11px;color:var(--muted)}.state{border-radius:20px;padding:5px 9px;font-size:11px;text-align:center;display:inline-block;width:max-content}.state.open{background:#44321d;color:var(--warn)}.state.progress{background:#173b48;color:#8dddff}.state.closed{background:#1d4034;color:var(--green)}.state.secret{background:#462631;color:#ffabb8}.owner{font-size:12px;color:#a9b9cb}.arrow{font-size:18px;color:#7894b5;text-align:right}.empty{padding:50px 20px;text-align:center;color:var(--muted)}.pagination{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-top:1px solid var(--stroke);gap:10px;font-size:11px;color:var(--muted)}.smallbtn{border:1px solid #34485f;background:#172639;color:#cde3ff;padding:9px 12px;border-radius:9px;font-size:12px}.smallbtn:hover{background:#253e5a}.smallbtn:disabled{opacity:.4;cursor:default}.detail{display:none}.detail.visible,.dashboard.visible{display:block}.dashboard.hidden{display:none}.back{border:0;background:none;color:var(--accent2);padding:0 0 20px;font-size:13px}.detail-header{background:linear-gradient(120deg,#203b5b,#142438);border:1px solid #36516d;border-radius:15px;padding:24px;margin-bottom:16px}.detail-header h2{font-size:23px;margin:7px 0 12px}.dhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.details-meta{display:flex;gap:20px;flex-wrap:wrap;color:#a7c0d8;font-size:12px}.tabs{display:flex;gap:7px;overflow:auto;border-bottom:1px solid var(--stroke);margin-bottom:16px;padding:0 2px}.tab{white-space:nowrap;border:0;background:transparent;color:#9eb1c6;padding:13px 15px;font-size:13px;border-bottom:2px solid transparent}.tab.selected{color:#9fd1ff;border-color:#6cb6ff}.sheet{background:#142034;border:1px solid var(--stroke);border-radius:14px;padding:26px;min-height:290px}.sheet h3{margin:0 0 17px;font-size:17px}.note{background:#101a2a;border-left:3px solid #4586c2;padding:15px 18px;border-radius:4px;color:#c5d4e5;font-size:13px;line-height:1.9;margin-bottom:20px}.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info{background:#111c2d;border:1px solid #293b53;border-radius:10px;padding:14px}.info b{display:block;color:#89a0bb;font-weight:500;font-size:11px;margin-bottom:5px}.info span{font-size:13px;color:#e0ebf9}.entry{display:flex;gap:12px;border-bottom:1px solid var(--stroke);padding:15px 0}.entry:last-child{border:0}.dot{background:#224969;color:#a6d6ff;border-radius:8px;padding:8px;flex:none;height:34px;width:34px;text-align:center;font-size:12px}.entry strong{font-size:13px;display:block;margin-bottom:4px}.entry p{color:#a9bcd2;margin:0;font-size:12px;line-height:1.7}.restricted{padding:28px;border:1px dashed #705060;background:#251924;border-radius:12px;text-align:center;color:#e7adbe}.restricted strong{display:block;margin-bottom:8px}.footer{text-align:center;color:#60748c;padding-top:25px;font-size:11px}.mobile-nav{display:none}
 @media(max-width:920px){.sidebar{width:72px;padding:22px 10px}.brand{justify-content:center;padding:0 0 22px}.brand .brand-text,.navgroup label,.nav span:not(.ic),.sidebar-footer{display:none}.nav{justify-content:center;padding:12px 6px}.main{padding:24px 16px 40px}.user{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.sidebar{display:none}.top{margin-bottom:20px}.heading{font-size:22px}.stat{padding:12px}.stat .number{font-size:23px}.toolbar{padding:13px}.search{min-width:100%}.filters{width:100%}.chip{flex:1;padding:10px 8px}.case{grid-template-columns:89px minmax(0,1fr) 20px;gap:8px;padding:14px 8px}.case .state,.case .owner{display:none}.case-name{font-size:12px}.case-code{font-size:10px}.case-meta{font-size:10px}.sheet{padding:16px}.info-grid{grid-template-columns:1fr}.details-meta{gap:8px 15px}.detail-header{padding:18px}.detail-header h2{font-size:19px}}
+
+/* Team-personnel directory: publicly viewable, with no editing or saving controls. */
+.people{display:none}.people.visible{display:block}.people-panel{padding:0}.people-intro{padding:27px 26px 23px;display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid var(--stroke)}.people-intro h2{font-size:21px;margin:8px 0 5px;letter-spacing:-.3px}.people-intro p,.people-coming p{margin:0;color:var(--muted);font-size:12px}.db-mark{white-space:nowrap;padding:8px 12px;border:1px solid #355679;border-radius:20px;color:#a8d4fd;background:#162f4a;font-size:11px}.officer-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:22px}.officer-card{border:1px solid #30445f;border-radius:14px;background:linear-gradient(140deg,#172941,#101c2d);padding:19px 20px;min-width:0}.officer-head{display:flex;align-items:center;gap:12px;margin-bottom:17px}.officer-monogram{display:grid;place-items:center;width:43px;height:43px;flex:none;border-radius:12px;border:1px solid #3a6288;background:#254464;color:#d2eaff;font-weight:800;font-size:17px}.officer-name{font-size:18px;font-weight:800;letter-spacing:-.2px}.officer-rank{font-size:11px;color:#8cadd0;margin-top:2px}.officer-role{font-size:11px;color:#8ecaff;border:1px solid #355e80;background:#1b344c;border-radius:20px;padding:5px 9px;margin-left:auto;white-space:nowrap}.officer-data{display:grid;grid-template-columns:1fr 1fr;gap:8px}.officer-data div{border:1px solid #283c53;border-radius:9px;background:#101d2d;padding:11px 12px}.officer-data label{display:block;font-size:10px;color:#8fa7c1;margin-bottom:5px}.officer-data span{font-size:12px;font-weight:650;color:#e1eefc}.officer-info{font-size:11px;color:#7492ad;margin-top:14px}.people-coming{margin-top:15px;padding:20px 25px;display:flex;justify-content:space-between;gap:12px;align-items:center}.people-coming h3{font-size:15px;margin:6px 0 5px}.coming{font-size:11px;border-radius:15px;color:#879eb7;background:#112237;border:1px solid #2a4058;padding:5px 10px}.mobile-nav{display:none}
+@media(max-width:760px){.officer-list{grid-template-columns:1fr}}
+@media(max-width:520px){.mobile-nav{display:flex;gap:8px;margin:0 0 14px}.mobile-item{flex:1;border-radius:10px;border:1px solid #314866;background:#142338;color:#a4bbd6;padding:11px 8px;font-size:12px}.mobile-item.active{border-color:#437aaf;background:#214368;color:#e3f2ff}.people-intro{padding:20px;align-items:flex-start;flex-direction:column}.officer-list{padding:13px}.officer-card{padding:17px}.officer-data{gap:7px}.people-coming{padding:17px}.db-mark{font-size:10px}}
+
+/* 2050 Team summary: clearly visible on first load. */
+.roster-summary{background:linear-gradient(112deg,#1b344f,#142438 58%,#102032);border:1px solid #345476;border-radius:15px;padding:21px 24px 23px;margin-bottom:18px;box-shadow:var(--shadow)}
+.roster-title{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:17px}.roster-title h2{font-size:18px;letter-spacing:-.35px;margin:5px 0 2px}.roster-title p{font-size:11px;color:#9bb5d1;margin:0}.roster-link{border:1px solid #5b8aaf;background:#22496c;color:#e1f2ff;border-radius:10px;padding:10px 13px;white-space:nowrap;font-size:12px}.roster-link:hover{background:#30618b}.roster-pills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.roster-pills>div{border:1px solid #34536e;background:#112940;border-radius:11px;padding:12px 14px}.roster-pills span{display:block;color:#8eb0d0;font-size:10px;margin-bottom:4px}.roster-pills strong{display:block;color:#e9f4ff;font-size:15px}
+@media(max-width:760px){.roster-pills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.roster-summary{padding:16px;margin-bottom:14px}.roster-title{align-items:flex-start;flex-direction:column;gap:10px}.roster-link{width:100%;text-align:center}.roster-pills{gap:7px}.roster-pills>div{padding:10px}.roster-pills strong{font-size:14px}}
 </style></head>
-<body><div class="layout"><aside class="sidebar"><div class="brand"><div class="logo">A</div><div class="brand-text"><b>ARC SYSTEM</b><small>MAJOR CRIME UNIT</small></div></div><div class="navgroup"><label>MAIN MENU</label><button class="nav active" onclick="goHome()"><span class="ic">▤</span><span>사건 관리</span></button><button class="nav" onclick="showMessage('인물 DB는 이 샘플에서 사건별 인물 탭으로 제공됩니다.')"><span class="ic">♧</span><span>관련 인물 DB</span></button><button class="nav" onclick="showMessage('증거 목록은 각 사건 상세 화면에서 확인할 수 있습니다.')"><span class="ic">◈</span><span>증거 기록</span></button></div><div class="sidebar-footer">SECURITY LEVEL 03<br>FICTIONAL DEMONSTRATION<br>© ARC LAB</div></aside>
-<main class="main"><header class="top"><div><div class="eyebrow">광역수사팀 / 사건 기록 시스템</div><h1 class="heading" id="mainTitle">사건 관리 대시보드</h1><div class="sub" id="subtitle">등록된 사건을 검색하고 수사 자료를 열람합니다.</div></div><div class="user"><div class="avatar">수</div><div>수사팀 내부 열람<br><span style="color:#7790ac">LEVEL 03 · DEMO</span></div></div></header>
-<div id="dashboard" class="dashboard visible"><section class="stats" id="stats"></section><section class="panel"><div class="toolbar"><input id="search" class="search" type="search" placeholder="⌕  사건명, 사건번호, 담당자 검색" aria-label="사건 검색"><div class="filters" id="filters"><button class="chip sel" data-filter="전체">전체</button><button class="chip" data-filter="수사 중">수사 중</button><button class="chip" data-filter="미해결">미해결</button><button class="chip" data-filter="종결">종결</button></div></div><div class="list-head"><span>사건 목록 <b id="count"></b></span><span>최신 등록순</span></div><div class="rows" id="caseRows"></div><div class="pagination"><span id="pageInfo"></span><div style="display:flex;gap:7px"><button class="smallbtn" id="prev">← 이전</button><button class="smallbtn" id="next">다음 →</button></div></div></section></div>
+<body><div class="layout"><aside class="sidebar"><div class="brand"><div class="logo">A</div><div class="brand-text"><b>ARC SYSTEM</b><small>MAJOR CRIME UNIT</small></div></div><div class="navgroup"><label>MAIN MENU</label><button class="nav active" data-view="cases" onclick="goHome()"><span class="ic">▤</span><span>사건 관리</span></button><button class="nav" data-view="people" onclick="openPeople()"><span class="ic">♧</span><span>관련 인물 DB</span></button><button class="nav" onclick="showMessage('증거 목록은 각 사건 상세 화면에서 확인할 수 있습니다.')"><span class="ic">◈</span><span>증거 기록</span></button></div><div class="sidebar-footer">SECURITY LEVEL 03<br>ARCHIVE YEAR 2050 · FICTIONAL<br>© ARC LAB</div></aside>
+<main class="main"><header class="top"><div><div class="eyebrow">광역수사팀 / 2050년 사건 기록 시스템</div><h1 class="heading" id="mainTitle">사건 관리 대시보드</h1><div class="sub" id="subtitle">등록된 2050년 사건을 검색하고 수사 자료를 열람합니다.</div></div><div class="user"><div class="avatar">수</div><div>수사팀 내부 열람<br><span style="color:#7790ac">LEVEL 03 · DEMO</span></div></div></header>
+<nav class="mobile-nav" aria-label="전산망 메뉴"><button class="mobile-item active" data-view="cases" onclick="goHome()">▤ 사건 관리</button><button class="mobile-item" data-view="people" onclick="openPeople()">♧ 인물 DB</button></nav>
+<div id="people" class="people" aria-label="광역수사팀 인물 정보">
+  <section class="panel people-panel">
+    <div class="people-intro"><div><div class="eyebrow">PERSONNEL DATABASE / INVESTIGATION TEAM</div><h2>2050년 광역수사팀 형사 명단</h2><p>등록된 팀원 4명 · 이름과 계급, 담당 직책을 열람할 수 있습니다.</p></div><span class="db-mark">READ ONLY · 열람 전용</span></div>
+    <div class="officer-list" id="officerList"></div>
+  </section>
+  <section class="panel people-coming"><div><div class="eyebrow">ASSOCIATED PERSONNEL</div><h3>조직원 · 관련 인물 DB</h3><p>조직원 정보는 추후 등록 예정입니다.</p></div><span class="coming">미등록</span></section>
+</div>
+<div id="dashboard" class="dashboard visible">
+  <section class="roster-summary" aria-label="2050년 광역수사팀 배치 현황">
+    <div class="roster-title"><div><div class="eyebrow">2050 · INVESTIGATION TEAM</div><h2>광역수사팀 배치 현황</h2><p>서은호 팀장 외 형사 3명 · 인물 상세 열람 가능</p></div><button class="roster-link" onclick="openPeople()" type="button">형사 명단 열람 <span aria-hidden="true">›</span></button></div>
+    <div class="roster-pills"><div><span>팀장 · 경감</span><strong>서은호</strong></div><div><span>선임형사 · 경위</span><strong>류지완</strong></div><div><span>형사 · 경사</span><strong>임찬영</strong></div><div><span>형사 · 경장</span><strong>조해준</strong></div></div>
+  </section>
+  <section class="stats" id="stats"></section><section class="panel"><div class="toolbar"><input id="search" class="search" type="search" placeholder="⌕  사건명, 사건번호, 담당자 검색" aria-label="사건 검색"><div class="filters" id="filters"><button class="chip sel" data-filter="전체">전체</button><button class="chip" data-filter="수사 중">수사 중</button><button class="chip" data-filter="미해결">미해결</button><button class="chip" data-filter="종결">종결</button></div></div><div class="list-head"><span>사건 목록 <b id="count"></b></span><span>최신 등록순</span></div><div class="rows" id="caseRows"></div><div class="pagination"><span id="pageInfo"></span><div style="display:flex;gap:7px"><button class="smallbtn" id="prev">← 이전</button><button class="smallbtn" id="next">다음 →</button></div></div></section></div>
 <div id="detail" class="detail"><button class="back" onclick="goHome()">← 사건 목록으로 돌아가기</button><section class="detail-header" id="detailHead"></section><div class="tabs" id="tabs"></div><section class="sheet" id="sheet"></section></div><div class="footer">창작용 가상 사건 전산망 · 실제 경찰 시스템과 무관 · 모든 정보는 허구입니다.</div></main></div>
 <script>
+// 관리자 원본에서만 변경되는 팀원 명단. 외부 방문자에게는 열람만 제공됩니다.
+const officers=[
+  {name:'서은호', role:'팀장', rank:'경감', grade:'6급 상당'},
+  {name:'류지완', role:'선임형사', rank:'경위', grade:'6급 상당'},
+  {name:'임찬영', role:'팀원', rank:'경사', grade:'7급 상당'},
+  {name:'조해준', role:'팀원', rank:'경장', grade:'8급 상당'}
+];
 const cases=[
-{id:'M-26-1187',name:'한강변 연쇄 실종 사건',category:'실종 / 조직범죄',status:'수사 중',date:'2026.11.17',owner:'강도윤',place:'서울 성동구 일대',summary:'최근 두 달 사이 심야 귀가 중 실종 신고가 세 차례 접수됐다. 피해자의 마지막 이동 경로에서 동일한 차량이 반복 확인됐다.',persons:[['김서진','실종자 · 29세','11월 2일 최종 목격'],['박경호','참고인 · 38세','인근 주차장 관리인'],['성명 미상','신원 미상','검은 세단 탑승자']],evidence:[['EV-01','CCTV 캡처','11월 2일 23:47 / 주차장 진입 차량'],['EV-02','통신 기록','실종자 마지막 기지국 접속 내역'],['EV-03','진술서','주차장 관리인 1차 진술']],history:[['11.17','수사팀 합동회의','동선 재검토 및 주변 CCTV 추가 확보 지시'],['11.14','통신 분석','마지막 발신 기록 확인'],['11.02','실종 신고','실종자 가족의 신고 접수']]},
-{id:'M-26-1172',name:'레드홀 클럽 불법자금 의혹',category:'경제범죄 / 조직범죄',status:'수사 중',date:'2026.11.13',owner:'윤태경',place:'서울 강남구 일대',summary:'유흥업소 운영 법인과 여러 차명업체 간 반복적인 고액 거래 정황이 포착됐다. 범죄 연관성은 조사 중이다.',persons:[['백현우','법인 대표 · 36세','관련 계좌 확인 중'],['이재혁','참고인 · 32세','업소 총괄 관리자']],evidence:[['EV-01','거래 분석표','일부 법인 간 자금 흐름'],['EV-02','사업자 등록 자료','연결 법인 관계']],history:[['11.13','자료 검토','계좌 거래 관계 분석'],['11.10','제보 접수','익명 제보 확인']]},
-{id:'M-26-1165',name:'신도심 차량 추적 및 협박 사건',category:'폭력 / 협박',status:'미해결',date:'2026.11.10',owner:'서지한',place:'서울 송파구 일대',summary:'피해자는 동일 차량이 여러 날 자신의 귀갓길을 따라왔다고 진술했다. 운전자 신원은 확인되지 않았다.',persons:[['정하린','신고자 · 27세','보호 필요성 검토'],['성명 미상','피의자 미상','차량 탑승자']],evidence:[['EV-01','블랙박스 영상','일부 차량 번호 식별 불가'],['EV-02','112 신고 기록','반복 신고 내역']],history:[['11.10','현장 재확인','동선 점검'],['11.07','신고 접수','협박 정황 진술']]},
-{id:'M-26-1138',name:'항만 창고 방화 의심 사건',category:'방화 / 조직범죄',status:'수사 중',date:'2026.11.03',owner:'강도윤',place:'인천 항만 인근',summary:'새벽 시간 창고에서 화재가 발생했다. 발화 원인과 외부인의 출입 여부를 확인하는 중이다.',persons:[['신민석','창고 관리자 · 45세','출입 기록 제출'],['미확인 인물','관계인 미상','화재 전 출입 정황']],evidence:[['EV-01','감식 중간보고','발화 지점 추정 자료'],['EV-02','출입 대장','경비 기록 대조']],history:[['11.03','현장 감식','화재 지점 조사'],['10.31','최초 출동','화재 신고 접수']]},
-{id:'M-26-1094',name:'도심 호텔 투숙객 실종 사건',category:'실종',status:'미해결',date:'2026.10.26',owner:'윤태경',place:'서울 용산구 일대',summary:'체크아웃 예정이던 투숙객과 연락이 닿지 않아 수사 의뢰가 접수됐다. 범죄 가능성은 확정되지 않았다.',persons:[['최수현','실종자 · 31세','객실 퇴실 여부 확인 중'],['오지훈','참고인 · 29세','호텔 직원']],evidence:[['EV-01','복도 CCTV','객실 층 이동 기록'],['EV-02','출입 기록','카드키 사용 이력']],history:[['10.26','확인 조사','호텔 관계자 면담'],['10.25','실종 신고','연락 두절 신고 접수']]},
-{id:'M-26-1068',name:'불법 사설 경호업체 폭행 사건',category:'폭력',status:'종결',date:'2026.10.14',owner:'서지한',place:'서울 마포구 일대',summary:'유흥가 인근 폭행 사건의 관련자 신원을 확인하고 수사를 종결했다. 상세 처분 내용은 샘플에서 생략했다.',persons:[['한기석','관련자 · 34세','진술 확보']],evidence:[['EV-01','현장 CCTV','폭행 시간대 자료']],history:[['10.14','수사 종결','사건 기록 정리'],['10.02','현장 조사','증거 확보']]},
-{id:'M-26-1031',name:'심야 불법도박장 운영 의혹',category:'도박 / 조직범죄',status:'수사 중',date:'2026.09.30',owner:'강도윤',place:'서울 중구 일대',summary:'위장업소로 의심되는 공간에서 정기적인 현금 거래가 이뤄졌다는 제보가 접수됐다.',persons:[['성명 미상','업소 운영자 미상','신원 조사 중']],evidence:[['EV-01','제보 원문','익명 신고 주요 진술']],history:[['09.30','내사 착수','초기 사실 확인']]},
-{id:'M-26-0998',name:'폐공장 비밀 모임 관련 사건',category:'조직범죄',status:'종결',date:'2026.09.18',owner:'윤태경',place:'경기 남부 지역',summary:'폐공장 출입 인원과 범죄 조직의 관련성을 확인했으나 직접적인 범죄 혐의가 확인되지 않아 기록을 정리했다.',persons:[['김도현','참고인 · 40세','건물 관리 책임자']],evidence:[['EV-01','현장 사진','외부 출입 흔적']],history:[['09.18','기록 종결','추가 조사 필요성 낮음'],['09.09','현장 조사','현장 확인']]}
+  {
+    "id": "M-50-1220",
+    "name": "메르시안 조직 마약 유통·성매매 알선 의혹",
+    "category": "조직범죄 / 마약 / 성매매 알선",
+    "status": "수사 중",
+    "date": "2050.11.20",
+    "owner": "서은호",
+    "place": "서울 강남구 및 수도권 일대",
+    "summary": "일명 ‘메르시안’으로 불리는 범죄 조직이 유흥업소 관계망을 이용해 마약류를 유통하고 성매매를 알선한다는 다수의 제보가 접수됐다. 수사팀은 관련 업소와 법인 간 자금 이동, 피해 신고의 공통점, 조직의 지휘 관계를 확인 중이다. 조직의 구체적 규모와 총책의 신원은 아직 확정되지 않았으며, 피해자 보호 및 진술 신빙성 확인을 우선하고 있다.",
+    "persons": [
+      [
+        "메르시안",
+        "수사 대상 조직",
+        "마약 유통 및 성매매 알선 관여 의혹. 조직 구성과 지휘 체계 확인 중"
+      ],
+      [
+        "조직 총책 (신원 미상)",
+        "주요 피의자 추정",
+        "실체와 신원 확인 중. 특정 인물로 단정하지 않음"
+      ],
+      [
+        "업소 관계자 A",
+        "관계인 · 신원 비공개",
+        "업소 간 연결 구조에 관해 참고인 조사 진행"
+      ],
+      [
+        "피해 신고자 B (가명)",
+        "보호 대상 · 신원 비공개",
+        "보호 조치 하에 진술 확보 중"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "제보 내용 대조표",
+        "2050년 10~11월 접수된 제보의 공통점과 상충 부분 정리"
+      ],
+      [
+        "EV-02",
+        "금융거래 분석 보고",
+        "관련 법인 간 반복 거래 정황. 범죄수익 여부 확인 중"
+      ],
+      [
+        "EV-03",
+        "관계 업소 현황도",
+        "제보에 등장한 업소·관계인을 비식별화하여 정리"
+      ],
+      [
+        "EV-04",
+        "피해자 진술 요약",
+        "개인 식별 정보 제외. 추가 검증 및 보호 조치 중"
+      ]
+    ],
+    "history": [
+      [
+        "2050.11.20",
+        "합동 수사 회의",
+        "서은호 팀장 주재. 조직의 지휘 관계와 피해자 보호 계획 병행 검토"
+      ],
+      [
+        "2050.11.17",
+        "거래 내역 교차 분석",
+        "관련 업체의 거래 자료와 진술을 대조"
+      ],
+      [
+        "2050.11.11",
+        "관계인 조사",
+        "업소 관계인 진술 확보 및 추가 사실 확인"
+      ],
+      [
+        "2050.11.04",
+        "조직범죄 첩보 접수",
+        "메르시안 관련 복수 제보를 단일 사건으로 병합 검토"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1187",
+    "name": "한강변 연쇄 실종 사건",
+    "category": "실종 / 조직범죄",
+    "status": "수사 중",
+    "date": "2050.11.18",
+    "owner": "류지완",
+    "place": "서울 성동구 한강변 일대",
+    "summary": "최근 두 달간 심야 귀갓길에서 성인 3명의 실종 신고가 접수됐다. 실종자들의 생활권은 서로 다르지만 마지막 목격 장소와 시간대가 일부 겹친다. 동일 차량이 복수 장소에서 확인되어 관련성 여부를 조사 중이며, 강제 범행으로 단정할 근거는 아직 확보되지 않았다.",
+    "persons": [
+      [
+        "김서진",
+        "실종자 · 29세",
+        "2050년 11월 2일 마지막 목격"
+      ],
+      [
+        "박경호",
+        "참고인 · 38세",
+        "인근 주차장 관리인. 차량 출입에 관해 진술"
+      ],
+      [
+        "신원 미상",
+        "차량 관련 인물",
+        "검은 세단 탑승자. 신원과 사건 연관성 미확인"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "CCTV 영상 발췌",
+        "2050년 11월 2일 23:47 주차장 인근 차량 통과"
+      ],
+      [
+        "EV-02",
+        "통신 위치 기록",
+        "실종자 마지막 접속 구간 확인"
+      ],
+      [
+        "EV-03",
+        "목격 진술서",
+        "관리인 등 주변인 진술 상호 대조"
+      ]
+    ],
+    "history": [
+      [
+        "2050.11.18",
+        "수사 경과 보고",
+        "실종 사례 간 시간·장소 관련성 검토"
+      ],
+      [
+        "2050.11.14",
+        "통신 내역 분석",
+        "최종 접속 정보 비교"
+      ],
+      [
+        "2050.11.02",
+        "추가 실종 신고",
+        "세 번째 실종자 접수"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1172",
+    "name": "레드홀 클럽 불법자금 의혹",
+    "category": "경제범죄 / 조직범죄",
+    "status": "수사 중",
+    "date": "2050.11.15",
+    "owner": "류지완",
+    "place": "서울 강남구 일대",
+    "summary": "레드홀 클럽 운영 법인과 여러 차명 업체 사이에서 설명이 불충분한 고액 거래가 반복된 정황이 확인됐다. 계좌 명의 및 거래 목적을 검토하고 있으며, 메르시안 사건과의 연관성 여부도 확인 대상이나 현재 연결이 입증된 것은 아니다.",
+    "persons": [
+      [
+        "백현우",
+        "법인 대표 · 36세",
+        "업체 관련 계좌와 계약서 확인 중"
+      ],
+      [
+        "이재혁",
+        "참고인 · 32세",
+        "클럽 운영 현황에 관한 진술 확보"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "거래 분석표",
+        "관련 법인 사이의 자금 흐름 요약"
+      ],
+      [
+        "EV-02",
+        "계약 관련 문서",
+        "일부 계약의 실재 여부 확인"
+      ],
+      [
+        "EV-03",
+        "법인 등기 자료",
+        "업체 관계도 대조"
+      ]
+    ],
+    "history": [
+      [
+        "2050.11.15",
+        "재무자료 검토",
+        "거래 목적과 계약 자료 대조"
+      ],
+      [
+        "2050.11.13",
+        "자료 확보",
+        "관련 자료 임의제출분 검토"
+      ],
+      [
+        "2050.11.10",
+        "익명 제보 접수",
+        "거래 의혹 제기"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1138",
+    "name": "항만 창고 방화 의심 사건",
+    "category": "방화 / 조직범죄",
+    "status": "수사 중",
+    "date": "2050.11.13",
+    "owner": "임찬영",
+    "place": "인천 항만 물류단지",
+    "summary": "항만 물류창고에서 야간 화재가 발생해 주요 보관 물품이 소실됐다. 최초 발화 지점 인근에서 평소와 다른 출입 흔적이 발견됐으나 방화 여부는 감식 결과가 나와야 판단할 수 있다. 보험·물류 관련 분쟁도 함께 확인 중이다.",
+    "persons": [
+      [
+        "신민석",
+        "창고 관리자 · 45세",
+        "현장 출입 기록과 운영 자료 제출"
+      ],
+      [
+        "신원 미상",
+        "관계인 추정",
+        "화재 전후 인근에 포착된 인물. 신원 확인 중"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "화재 감식 중간보고",
+        "추정 발화 지점과 시료 분석 경과"
+      ],
+      [
+        "EV-02",
+        "출입 기록",
+        "방재시스템 및 경비 출입 이력"
+      ],
+      [
+        "EV-03",
+        "현장 사진",
+        "화재 이후 피해 구역 기록"
+      ]
+    ],
+    "history": [
+      [
+        "2050.11.13",
+        "감식 결과 검토",
+        "추가 감정 필요 항목 정리"
+      ],
+      [
+        "2050.11.05",
+        "관계자 면담",
+        "창고 운영 자료 확보"
+      ],
+      [
+        "2050.10.31",
+        "화재 발생",
+        "현장 통제 및 감식 착수"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1165",
+    "name": "신도심 차량 추적 및 협박 사건",
+    "category": "폭력 / 협박",
+    "status": "미해결",
+    "date": "2050.11.12",
+    "owner": "임찬영",
+    "place": "서울 송파구 일대",
+    "summary": "한 신고자가 퇴근길에 같은 차량이 반복적으로 따라왔다고 주장하고 위협성 메시지를 받았다고 진술했다. 차량 번호는 영상에서 확인이 어렵고 발신자도 특정되지 않았다. 동일인의 행위인지 판단하기 위해 추가 자료를 수집 중이다.",
+    "persons": [
+      [
+        "정하린",
+        "신고자 · 27세",
+        "신변 보호 필요성 확인 중"
+      ],
+      [
+        "신원 미상",
+        "피의자 미상",
+        "차량 운전자 및 메시지 발신자 동일성 미확인"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "블랙박스 영상",
+        "일부 구간 촬영. 차량 번호 식별 곤란"
+      ],
+      [
+        "EV-02",
+        "문자 메시지 기록",
+        "신고자가 제출한 원본 보존"
+      ],
+      [
+        "EV-03",
+        "신고 이력",
+        "반복 신고 시점과 장소 정리"
+      ]
+    ],
+    "history": [
+      [
+        "2050.11.12",
+        "추가 진술 확보",
+        "신고자 안전 조치 및 경로 비교"
+      ],
+      [
+        "2050.11.10",
+        "영상 대조",
+        "인근 차량 이동 기록 검토"
+      ],
+      [
+        "2050.11.07",
+        "최초 신고 접수",
+        "추적·협박 의심 정황 접수"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1031",
+    "name": "심야 불법도박장 운영 의혹",
+    "category": "도박 / 조직범죄",
+    "status": "수사 중",
+    "date": "2050.11.08",
+    "owner": "조해준",
+    "place": "서울 중구 일대",
+    "summary": "영업 종료 후에도 다수가 출입하는 위장 업소에서 불법 도박이 이뤄진다는 제보가 접수됐다. 현금 거래와 예약 출입 정황을 확인하고 있으나 실제 도박장 운영 여부는 아직 입증되지 않았다.",
+    "persons": [
+      [
+        "신원 미상",
+        "업소 운영자 추정",
+        "실제 운영자 및 영업 형태 확인 중"
+      ],
+      [
+        "제보자 C (가명)",
+        "제보자 · 신원 비공개",
+        "제보 내용에 대한 추가 검증 진행"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "익명 제보 기록",
+        "제보 핵심 내용 및 확인이 필요한 사항"
+      ],
+      [
+        "EV-02",
+        "업소 출입 정황",
+        "주변 관찰 기록 요약"
+      ],
+      [
+        "EV-03",
+        "사업자 자료",
+        "업종·영업 신고 내역 검토"
+      ]
+    ],
+    "history": [
+      [
+        "2050.11.08",
+        "첩보 보강",
+        "운영 실체 확인을 위한 자료 정리"
+      ],
+      [
+        "2050.10.19",
+        "기초 사실 확인",
+        "업소 신고 현황 대조"
+      ],
+      [
+        "2050.09.30",
+        "내사 착수",
+        "초기 제보 접수"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1082",
+    "name": "서부권 연쇄살인 사건",
+    "category": "살인 / 연쇄범죄",
+    "status": "종결",
+    "date": "2050.10.30",
+    "owner": "서은호",
+    "place": "서울 서대문구·은평구 일대",
+    "summary": "약 8개월에 걸쳐 발생한 살인 사건 3건의 피해자에게서 유사한 현장 정황이 확인되어 합동 수사를 진행했다. 별개 사건으로 관리되던 기록을 재검토한 결과 동일 용의자의 범행으로 판단할 수 있는 증거가 확보됐다. 피의자 1명을 검거하고 관련 기록을 검찰에 송치해 경찰 수사를 종결했다. 형사재판의 최종 판단은 별개다.",
+    "persons": [
+      [
+        "이도현",
+        "피의자 · 39세",
+        "3건 연관 혐의로 검거·송치"
+      ],
+      [
+        "피해자 3명",
+        "피해자 · 신원 비공개",
+        "유가족 보호를 위해 상세 정보 비공개"
+      ],
+      [
+        "한소정",
+        "참고인 · 42세",
+        "사건 간 연결 정황 관련 진술"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "사건 비교 분석 보고",
+        "3개 사건 현장 특징과 시간대 비교"
+      ],
+      [
+        "EV-02",
+        "감정 결과 통보서",
+        "증거물 감정 결과 교차 확인"
+      ],
+      [
+        "EV-03",
+        "CCTV 및 이동 기록",
+        "피의자 이동 동선과 사건 시점 대조"
+      ],
+      [
+        "EV-04",
+        "송치 기록",
+        "2050년 10월 30일 관련 기록 검찰 송치"
+      ]
+    ],
+    "history": [
+      [
+        "2050.10.30",
+        "수사 종결·송치",
+        "피의자 1명 검찰 송치, 사건 기록 보관"
+      ],
+      [
+        "2050.10.24",
+        "피의자 검거",
+        "확보한 자료와 대조 후 신병 확보"
+      ],
+      [
+        "2050.10.12",
+        "통합 수사 전환",
+        "3건 관련성 확인 후 합동수사 진행"
+      ],
+      [
+        "2050.08.04",
+        "공통 정황 발견",
+        "기존 사건 기록 재분석 착수"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1094",
+    "name": "도심 호텔 투숙객 실종 사건",
+    "category": "실종",
+    "status": "미해결",
+    "date": "2050.10.27",
+    "owner": "조해준",
+    "place": "서울 용산구 일대",
+    "summary": "체크아웃 예정이던 호텔 투숙객의 행방이 확인되지 않아 신고가 접수됐다. 객실 출입 이력과 영상에 일부 공백이 있으나 범죄 피해 정황은 확정되지 않았다. 마지막 목격 시점 이후의 이동 경로를 찾는 중이다.",
+    "persons": [
+      [
+        "최수현",
+        "실종자 · 31세",
+        "2050년 10월 25일 이후 연락 두절"
+      ],
+      [
+        "오지훈",
+        "참고인 · 29세",
+        "호텔 직원. 마지막 목격 시점 진술"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "복도 CCTV",
+        "객실 층 이동 기록 일부 확인"
+      ],
+      [
+        "EV-02",
+        "카드키 출입 내역",
+        "객실 출입 시각 점검"
+      ],
+      [
+        "EV-03",
+        "예약 정보",
+        "투숙 일정과 체크아웃 예정 자료"
+      ]
+    ],
+    "history": [
+      [
+        "2050.10.27",
+        "호텔 관계자 추가 면담",
+        "시간대별 목격 내용 확인"
+      ],
+      [
+        "2050.10.26",
+        "초기 확인 조사",
+        "출입 기록 및 자료 확보"
+      ],
+      [
+        "2050.10.25",
+        "실종 신고",
+        "가족 연락 두절 신고 접수"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-1068",
+    "name": "마포 일대 대규모 무차별 폭행 사건",
+    "category": "집단폭행 / 무차별 범행",
+    "status": "종결",
+    "date": "2050.10.18",
+    "owner": "임찬영",
+    "place": "서울 마포구 홍대입구 일대",
+    "summary": "2050년 9월 27일 밤 유동인구가 많은 거리에서 불특정 시민을 대상으로 여러 차례 집단폭행이 발생했다. 약 15분 사이 서로 다른 지점에서 신고가 이어졌고 시민 11명이 부상을 입었다. 수사팀은 주변 영상과 피해자·목격자 진술을 종합해 같은 일행 6명이 연루된 것으로 판단했다. 관련 피의자 6명을 검거해 사건을 검찰에 송치하고 경찰 수사를 종결했다.",
+    "persons": [
+      [
+        "피해 시민 11명",
+        "피해자 · 신원 비공개",
+        "현장별 피해 상황 확인. 개인 정보 보호"
+      ],
+      [
+        "박정민",
+        "피의자 · 26세",
+        "집단폭행 혐의 관련자 중 1명"
+      ],
+      [
+        "기타 피의자 5명",
+        "피의자 · 신원 비공개",
+        "각 가담 범위 분리 조사 후 송치"
+      ],
+      [
+        "이선아",
+        "목격자 · 33세",
+        "첫 신고 지점 인근 목격 진술"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "현장별 CCTV 통합표",
+        "시간대별 4개 현장 영상 교차 확인"
+      ],
+      [
+        "EV-02",
+        "피해자 진술 기록",
+        "피해 내용과 가담자 특정 진술 정리"
+      ],
+      [
+        "EV-03",
+        "진단서 및 진료기록",
+        "피해 정도 확인 자료"
+      ],
+      [
+        "EV-04",
+        "현장 위치도",
+        "신고 지점과 사건 발생 구간 정리"
+      ],
+      [
+        "EV-05",
+        "사건 송치 기록",
+        "2050년 10월 18일 피의자 6명 송치"
+      ]
+    ],
+    "history": [
+      [
+        "2050.10.18",
+        "수사 종결·송치",
+        "피의자 6명 관련 혐의 검찰 송치"
+      ],
+      [
+        "2050.10.08",
+        "피해 기록 정리",
+        "피해자 11명 피해 내용과 증거 대조"
+      ],
+      [
+        "2050.09.30",
+        "관련 피의자 검거",
+        "다수 신고 사건의 연관성 확인"
+      ],
+      [
+        "2050.09.27",
+        "집단 폭행 발생",
+        "22시경 다수 장소에서 신고 접수, 피해 시민 11명 확인"
+      ]
+    ]
+  },
+  {
+    "id": "M-50-0998",
+    "name": "폐공장 비밀 모임 관련 사건",
+    "category": "조직범죄 관련 첩보",
+    "status": "종결",
+    "date": "2050.09.18",
+    "owner": "류지완",
+    "place": "경기 남부 지역",
+    "summary": "폐공장에 야간 모임이 열린다는 제보를 바탕으로 범죄 조직과의 연관성을 확인했다. 출입자 진술과 현장 기록을 검토했으나 해당 모임 자체의 구체적인 범죄 혐의가 확인되지 않아 기록을 정리하고 내사를 종결했다.",
+    "persons": [
+      [
+        "김도현",
+        "참고인 · 40세",
+        "건물 관리 책임자"
+      ]
+    ],
+    "evidence": [
+      [
+        "EV-01",
+        "현장 사진",
+        "출입 흔적 및 건물 상태 기록"
+      ],
+      [
+        "EV-02",
+        "참고인 진술서",
+        "모임 일시와 출입 목적 확인"
+      ]
+    ],
+    "history": [
+      [
+        "2050.09.18",
+        "내사 종결",
+        "직접 범죄 혐의 확인되지 않아 기록 보관"
+      ],
+      [
+        "2050.09.09",
+        "현장 확인",
+        "건물 출입과 관계자 조사"
+      ]
+    ]
+  }
 ];
 let filter='전체',query='',page=1,selected=null,activeTab='개요';const PAGE=5;
 function escapeHTML(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function statusClass(s){return s==='수사 중'?'progress':s==='미해결'?'open':'closed'}
-function init(){document.getElementById('stats').innerHTML=[['등록 사건',cases.length,'전체 사건'],['수사 중',cases.filter(c=>c.status==='수사 중').length,'진행 사건'],['미해결',cases.filter(c=>c.status==='미해결').length,'추가 확인 필요'],['종결',cases.filter(c=>c.status==='종결').length,'기록 보관']].map(([k,v,h])=>`<div class="stat"><div class="small">${k}</div><div class="number">${v.toString().padStart(2,'0')}</div><div class="hint">${h}</div></div>`).join('');document.getElementById('search').addEventListener('input',e=>{query=e.target.value;page=1;render()});document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.filter;page=1;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('sel',b===btn));render()}));document.getElementById('prev').addEventListener('click',()=>{if(page>1){page--;render()}});document.getElementById('next').addEventListener('click',()=>{page++;render()});render()}
+function setCurrentView(view){
+  document.querySelectorAll('[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===view));
+}
+function renderOfficers(){
+  document.getElementById('officerList').innerHTML=officers.map((o,i)=>`<article class="officer-card" aria-label="${escapeHTML(o.name)} 인물 정보"><div class="officer-head"><span class="officer-monogram">${String(i+1).padStart(2,'0')}</span><div><div class="officer-name">${escapeHTML(o.name)}</div><div class="officer-rank">광역수사팀 / 수사관</div></div><span class="officer-role">${escapeHTML(o.role)}</span></div><div class="officer-data"><div><label>계급</label><span>${escapeHTML(o.rank)}</span></div><div><label>공무원 급수</label><span>${escapeHTML(o.grade)}</span></div><div><label>소속</label><span>광역수사팀</span></div><div><label>직책</label><span>${escapeHTML(o.role)}</span></div></div><div class="officer-info">추가 인물 정보는 추후 등록 예정</div></article>`).join('');
+}
+function openPeople(){
+  selected=null;
+  document.getElementById('dashboard').classList.remove('visible');
+  document.getElementById('dashboard').classList.add('hidden');
+  document.getElementById('detail').classList.remove('visible');
+  document.getElementById('people').classList.add('visible');
+  document.getElementById('mainTitle').textContent='관련 인물 DB';
+  document.getElementById('subtitle').textContent='광역수사팀 수사관과 관련 인물의 등록 정보를 확인합니다.';
+  setCurrentView('people');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function init(){renderOfficers();document.getElementById('stats').innerHTML=[['등록 사건',cases.length,'전체 사건'],['수사 중',cases.filter(c=>c.status==='수사 중').length,'진행 사건'],['미해결',cases.filter(c=>c.status==='미해결').length,'추가 확인 필요'],['종결',cases.filter(c=>c.status==='종결').length,'기록 보관']].map(([k,v,h])=>`<div class="stat"><div class="small">${k}</div><div class="number">${v.toString().padStart(2,'0')}</div><div class="hint">${h}</div></div>`).join('');document.getElementById('search').addEventListener('input',e=>{query=e.target.value;page=1;render()});document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.filter;page=1;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('sel',b===btn));render()}));document.getElementById('prev').addEventListener('click',()=>{if(page>1){page--;render()}});document.getElementById('next').addEventListener('click',()=>{page++;render()});render()}
 function current(){return cases.filter(c=>(filter==='전체'||c.status===filter)&&[c.id,c.name,c.category,c.owner,c.place].join(' ').toLowerCase().includes(query.toLowerCase()))}
 function render(){const rows=current(),pages=Math.max(1,Math.ceil(rows.length/PAGE));page=Math.min(page,pages);document.getElementById('count').textContent=`(${rows.length})`;const view=rows.slice((page-1)*PAGE,page*PAGE);document.getElementById('caseRows').innerHTML=view.length?view.map(c=>`<button type="button" class="case" data-id="${c.id}" aria-label="${escapeHTML(c.name)} 상세 열람"><span class="case-code">${c.id}<small>${c.date}</small></span><span><span class="case-name">${escapeHTML(c.name)}</span><span class="case-meta">${escapeHTML(c.category)} · ${escapeHTML(c.place)}</span></span><span class="state ${statusClass(c.status)}">${c.status}</span><span class="owner">${escapeHTML(c.owner)}</span><span class="arrow">›</span></button>`).join(''):'<div class="empty">검색 결과가 없습니다. 다른 검색어나 필터를 선택하세요.</div>';document.querySelectorAll('.case').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.id)));document.getElementById('pageInfo').textContent=`${page} / ${pages} 페이지`;document.getElementById('prev').disabled=page===1;document.getElementById('next').disabled=page===pages}
-function openCase(id){selected=cases.find(c=>c.id===id);if(!selected)return;activeTab='개요';document.getElementById('dashboard').classList.replace('visible','hidden');document.getElementById('detail').classList.add('visible');document.getElementById('mainTitle').textContent='사건 상세 기록';document.getElementById('subtitle').textContent='사건 관련 자료를 열람합니다.';const c=selected;document.getElementById('detailHead').innerHTML=`<div class="eyebrow">CASE DOSSIER / ${c.id}</div><div class="dhead"><h2>${escapeHTML(c.name)}</h2><span class="state ${statusClass(c.status)}">${c.status}</span></div><div class="details-meta"><span>사건번호: ${c.id}</span><span>등록: ${c.date}</span><span>담당: ${escapeHTML(c.owner)}</span></div>`;renderTab();window.scrollTo({top:0,behavior:'smooth'})}
-function goHome(){selected=null;document.getElementById('detail').classList.remove('visible');document.getElementById('dashboard').classList.replace('hidden','visible');document.getElementById('mainTitle').textContent='사건 관리 대시보드';document.getElementById('subtitle').textContent='등록된 사건을 검색하고 수사 자료를 열람합니다.';window.scrollTo({top:0,behavior:'smooth'})}
+function openCase(id){selected=cases.find(c=>c.id===id);if(!selected)return;document.getElementById('people').classList.remove('visible');setCurrentView('cases');activeTab='개요';document.getElementById('dashboard').classList.replace('visible','hidden');document.getElementById('detail').classList.add('visible');document.getElementById('mainTitle').textContent='사건 상세 기록';document.getElementById('subtitle').textContent='사건 관련 자료를 열람합니다.';const c=selected;document.getElementById('detailHead').innerHTML=`<div class="eyebrow">CASE DOSSIER / ${c.id}</div><div class="dhead"><h2>${escapeHTML(c.name)}</h2><span class="state ${statusClass(c.status)}">${c.status}</span></div><div class="details-meta"><span>사건번호: ${c.id}</span><span>등록: ${c.date}</span><span>담당: ${escapeHTML(c.owner)}</span></div>`;renderTab();window.scrollTo({top:0,behavior:'smooth'})}
+function goHome(){selected=null;document.getElementById('people').classList.remove('visible');setCurrentView('cases');document.getElementById('detail').classList.remove('visible');document.getElementById('dashboard').classList.replace('hidden','visible');document.getElementById('mainTitle').textContent='사건 관리 대시보드';document.getElementById('subtitle').textContent='등록된 2050년 사건을 검색하고 수사 자료를 열람합니다.';window.scrollTo({top:0,behavior:'smooth'})}
 function renderTab(){let c=selected;if(!c)return;document.getElementById('tabs').innerHTML=['개요','관련 인물','증거 자료','수사 일지','비공개 자료'].map(t=>`<button class="tab ${activeTab===t?'selected':''}" data-tab="${t}">${t}</button>`).join('');document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{activeTab=b.dataset.tab;renderTab()}));let html='';if(activeTab==='개요'){html=`<h3>사건 개요</h3><div class="note">${escapeHTML(c.summary)}</div><div class="info-grid"><div class="info"><b>사건번호</b><span>${c.id}</span></div><div class="info"><b>사건 분류</b><span>${escapeHTML(c.category)}</span></div><div class="info"><b>발생 / 관련 지역</b><span>${escapeHTML(c.place)}</span></div><div class="info"><b>담당 수사관</b><span>${escapeHTML(c.owner)}</span></div><div class="info"><b>수사 현황</b><span>${c.status}</span></div><div class="info"><b>최신 기록일</b><span>${c.date}</span></div></div>`}else if(activeTab==='관련 인물'){html=`<h3>관련 인물 (${c.persons.length})</h3>`+c.persons.map(([name,role,note],i)=>`<div class="entry"><div class="dot">${String(i+1).padStart(2,'0')}</div><div><strong>${escapeHTML(name)} <span style="color:#849ab2;font-weight:400">/ ${escapeHTML(role)}</span></strong><p>${escapeHTML(note)}</p></div></div>`).join('')}else if(activeTab==='증거 자료'){html=`<h3>증거 목록 (${c.evidence.length})</h3>`+c.evidence.map(([id,name,note])=>`<div class="entry"><div class="dot">◇</div><div><strong>${escapeHTML(id)} · ${escapeHTML(name)}</strong><p>${escapeHTML(note)}</p></div></div>`).join('')+'<p style="color:#7c94ad;font-size:11px;margin-top:22px">※ 실제 영상·사진 파일은 포함되지 않은 창작 예시입니다.</p>'}else if(activeTab==='수사 일지'){html=`<h3>수사 진행 기록</h3>`+c.history.map(([date,title,note])=>`<div class="entry"><div class="dot">${escapeHTML(date.slice(-2))}</div><div><strong>${escapeHTML(date)} · ${escapeHTML(title)}</strong><p>${escapeHTML(note)}</p></div></div>`).join('')}else{html='<h3>비공개 자료</h3><div class="restricted"><strong>🔒 제한 문서</strong>현재 샘플에는 추가 자료가 설정되어 있지 않습니다.<br><span style="font-size:12px">실제 버전에서는 암호 입력 · 특정 사건만 공개 등을 구현할 수 있습니다.</span></div>'}document.getElementById('sheet').innerHTML=html}
 function showMessage(msg){alert(msg)}init();
 </script></body></html>
